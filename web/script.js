@@ -14,8 +14,15 @@ const BGColors = {
 
 const setOnOff = (gridID) => {
     const ele = document.getElementById(gridID)
-    on.onclick =  () => ele.style.backgroundColor = BGColors[gridID]
-    off.onclick = () => ele.style.backgroundColor = 'black'
+    on.onclick =  () => {
+        ele.style.backgroundColor = BGColors[gridID]
+        eel.ToggleOn(gridID)
+    }
+
+    off.onclick = () => {
+        ele.style.backgroundColor = 'black'
+        eel.ToggleOff(gridID)
+    }
     pcan.onclick = () => submenu.classList.add('hidden')
     submenu.classList.remove('hidden')
 }
